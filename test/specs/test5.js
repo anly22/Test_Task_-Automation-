@@ -6,7 +6,7 @@ describe('Login functionaloty', () => {
 
         await loginPage.inputPassword.setValue("SuperSecretPassword!")
         
-        const prop = await loginPage.inputPassword.getCSSProperty('-webkit-text-security')
-        await expect(prop.value).toBe('disc')
+        const attr = await loginPage.inputPassword.getAttribute('type')
+        await expect(attr).toBe('password')
     })
 })
